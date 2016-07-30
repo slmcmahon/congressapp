@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Data-->
+        <!--States View Controller-->
         <scene sceneID="NuU-D7-RgO">
             <objects>
                 <tableViewController id="PH1-eT-uSd" customClass="StatesViewController" customModule="CongressApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -15,7 +15,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StateCell" id="NSO-E2-GDj">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NSO-E2-GDj" id="xnr-KD-u2Q">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -28,14 +28,14 @@
                             <outlet property="delegate" destination="PH1-eT-uSd" id="dng-j9-ia5"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Data" image="second" id="C4c-pV-w89"/>
+                    <navigationItem key="navigationItem" id="igD-93-8NA"/>
                     <connections>
                         <segue destination="CuY-fN-Zcr" kind="show" identifier="showMembers" id="Kfv-zB-FfD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTC-UA-ZGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1098" y="-451"/>
+            <point key="canvasLocation" x="1910" y="-451"/>
         </scene>
         <!--Member List View Controller-->
         <scene sceneID="tIC-oZ-BQg">
@@ -47,7 +47,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemberCell" id="Dnh-yz-6MJ">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dnh-yz-6MJ" id="BGV-X1-Z0e">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -63,7 +63,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T0q-4j-fDU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1878" y="-437"/>
+            <point key="canvasLocation" x="2690" y="-437"/>
         </scene>
         <!--Settings-->
         <scene sceneID="wg7-f3-ORb">
@@ -116,13 +116,32 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="PH1-eT-uSd" kind="relationship" relationship="viewControllers" id="q4K-gH-Oe4"/>
+                        <segue destination="j8s-hf-HaP" kind="relationship" relationship="viewControllers" id="q4K-gH-Oe4"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="310" y="-255"/>
+        </scene>
+        <!--Data-->
+        <scene sceneID="HG6-Gm-oqe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j8s-hf-HaP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Data" image="second" id="C4c-pV-w89"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GPI-df-rjA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PH1-eT-uSd" kind="relationship" relationship="rootViewController" id="cBk-1l-fAu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k9E-pF-hn7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1098" y="-451"/>
         </scene>
     </scenes>
     <resources>
