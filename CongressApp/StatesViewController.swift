@@ -45,7 +45,7 @@ class StatesViewController: UITableViewController {
         let indexPath = tableView.indexPathForSelectedRow!
         let code = Constants.states[stateNames[indexPath.row]]
         let mlvc = segue.destinationViewController as! MemberListViewController
-        mlvc.stateCode = code
+        mlvc.stateData = (code!, stateNames[indexPath.row])
     }
 
 }

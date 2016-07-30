@@ -12,14 +12,16 @@ import SwiftyJSON
 class MemberListViewController : UITableViewController {
     
     var vm : MemberListViewModel?
-    var stateCode : String? = nil
+    var stateData : (String, String)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = stateData!.1
+        
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 50, 0);
         
-        vm = MemberListViewModel(stateCode: stateCode, onComplete: membersLoaded, onError: memberLoadFailed)
+        vm = MemberListViewModel(stateCode: stateData!.0, onComplete: membersLoaded, onError: memberLoadFailed)
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
