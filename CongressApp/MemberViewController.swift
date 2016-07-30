@@ -12,6 +12,9 @@ import SwiftyJSON
 class MemberViewController : UIViewController {
     
     @IBOutlet var lblMemberName: UILabel!
+    @IBOutlet var lblMemberPhone: UILabel!
+    @IBOutlet var lblMemberTitle: UILabel!
+    @IBOutlet var lblParty: UILabel!
     
     var vm : MemberViewModel?
     var memberId : Int?
@@ -24,7 +27,11 @@ class MemberViewController : UIViewController {
     }
     
     private func memberLoaded() {
+        self.title = vm?.name
         lblMemberName.text = vm?.name
+        lblMemberPhone.text = vm?.phone
+        lblMemberTitle.text = vm?.title
+        lblParty.text = vm?.party
     }
     
     private func memberLoadFailed(message : String!) {
