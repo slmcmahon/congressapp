@@ -7,7 +7,9 @@
 //
 
 public struct Constants {
-    static let membersBaseUrl = "https://www.govtrack.us/api/v2/role?current=true"
+    static let baseUrl = "https://www.govtrack.us/api/v2/"
+    static let membersBaseUrl = Constants.baseUrl + "?role?current=true"
+    static let memberBaseUrl = Constants.baseUrl + "person/"
     
     static let states : Dictionary<String,String> = [
         "Alabama":"AL",
