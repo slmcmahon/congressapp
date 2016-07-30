@@ -41,8 +41,11 @@ class MemberListViewController : UITableViewController {
         return cell as UITableViewCell!
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let indexPath = tableView.indexPathForSelectedRow!
+        let code = vm?[indexPath.row]!["person"]["id"].intValue
+        let mvc = segue.destinationViewController as! MemberViewController
+        mvc.memberId = code
     }
     
     func membersLoaded() {

@@ -53,6 +53,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="pJq-Zh-t35" kind="show" identifier="showMember" id="d0q-L3-W9b"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -63,7 +66,36 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T0q-4j-fDU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2690" y="-437"/>
+            <point key="canvasLocation" x="2682" y="-451"/>
+        </scene>
+        <!--Member View Controller-->
+        <scene sceneID="1t4-Lb-qBp">
+            <objects>
+                <viewController id="pJq-Zh-t35" customClass="MemberViewController" customModule="CongressApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DSe-EX-Bqp"/>
+                        <viewControllerLayoutGuide type="bottom" id="vdO-an-Vqj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kvx-Z7-YDP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="am9-0A-K8X">
+                                <rect key="frame" x="20" y="72" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="lblMemberName" destination="am9-0A-K8X" id="29v-SD-VvJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fRN-CT-8Uk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3412" y="-451"/>
         </scene>
         <!--Settings-->
         <scene sceneID="wg7-f3-ORb">
