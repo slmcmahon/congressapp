@@ -102,13 +102,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		3E1DD8651D4CBA7A005662B4 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Cells;
-			sourceTree = "<group>";
-		};
 		3EE2F56F1D4CAA7300357F35 = {
 			isa = PBXGroup;
 			children = (
@@ -134,20 +127,12 @@
 		3EE2F57A1D4CAA7300357F35 /* CongressApp */ = {
 			isa = PBXGroup;
 			children = (
-				3E1DD8651D4CBA7A005662B4 /* Cells */,
+				3EFF84861D4D97700023F21B /* ViewModels */,
+				3EFF84881D4D97EB0023F21B /* ViewControllers */,
+				3EFF84871D4D97CA0023F21B /* UI */,
 				3EE2F57B1D4CAA7300357F35 /* AppDelegate.swift */,
-				3EE2F57D1D4CAA7300357F35 /* StatesViewController.swift */,
-				3EE2F57F1D4CAA7300357F35 /* SettingsViewController.swift */,
-				3EE2F5811D4CAA7300357F35 /* Main.storyboard */,
-				3EE2F5841D4CAA7300357F35 /* Assets.xcassets */,
-				3EE2F5861D4CAA7300357F35 /* LaunchScreen.storyboard */,
 				3EE2F5891D4CAA7300357F35 /* Info.plist */,
 				3E1DD8611D4CABD5005662B4 /* Constants.swift */,
-				3E1DD8631D4CB0DE005662B4 /* MembersViewController.swift */,
-				3E1DD8681D4CBAC9005662B4 /* MemberListViewController.swift */,
-				3E1DD86A1D4CBB78005662B4 /* MemberListViewModel.swift */,
-				3E1DD86C1D4CCDB9005662B4 /* MemberViewController.swift */,
-				3E1DD86E1D4CD44E005662B4 /* MemberViewModel.swift */,
 			);
 			path = CongressApp;
 			sourceTree = "<group>";
@@ -168,6 +153,37 @@
 				3EE2F59F1D4CAA7300357F35 /* Info.plist */,
 			);
 			path = CongressAppUITests;
+			sourceTree = "<group>";
+		};
+		3EFF84861D4D97700023F21B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3E1DD86E1D4CD44E005662B4 /* MemberViewModel.swift */,
+				3E1DD86A1D4CBB78005662B4 /* MemberListViewModel.swift */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		3EFF84871D4D97CA0023F21B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3EE2F5861D4CAA7300357F35 /* LaunchScreen.storyboard */,
+				3EE2F5811D4CAA7300357F35 /* Main.storyboard */,
+				3EE2F5841D4CAA7300357F35 /* Assets.xcassets */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		3EFF84881D4D97EB0023F21B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3EE2F57D1D4CAA7300357F35 /* StatesViewController.swift */,
+				3EE2F57F1D4CAA7300357F35 /* SettingsViewController.swift */,
+				3E1DD8631D4CB0DE005662B4 /* MembersViewController.swift */,
+				3E1DD8681D4CBAC9005662B4 /* MemberListViewController.swift */,
+				3E1DD86C1D4CCDB9005662B4 /* MemberViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		DC0B345D4B95722A3FAAA15D /* Frameworks */ = {
