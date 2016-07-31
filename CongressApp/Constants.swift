@@ -45,7 +45,7 @@ public struct Constants {
         "New Mexico":"NM",
         "New York":"NY",
         "North Carolina":"NC",
-        " North Dakota":"ND",
+        "North Dakota":"ND",
         "Ohio":"OH",
         "Oklahoma":"OK",
         "Oregon":"OR",
