@@ -17,6 +17,7 @@ class MemberViewController : UIViewController {
     @IBOutlet var lblParty: UILabel!
     @IBOutlet var lblTwitterId : UILabel!
     @IBOutlet var lblYoutubeId : UILabel!
+    @IBOutlet var lblWebSite : UILabel!
     
     var vm : MemberViewModel?
     var memberId : Int?
@@ -35,6 +36,7 @@ class MemberViewController : UIViewController {
         lblParty.text = vm?.party
         lblTwitterId.text = vm?.twitterId
         lblYoutubeId.text = vm?.youtubeId
+        lblWebSite.text = vm?.webSite
     }
     
     private func memberLoadFailed(message : String!) {
