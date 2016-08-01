@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import PKHUD
 
 class MemberListViewController : UITableViewController {
     
@@ -21,6 +22,7 @@ class MemberListViewController : UITableViewController {
         
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 50, 0);
         
+        HUD.show(.Progress)
         vm = MemberListViewModel(stateCode: stateData!.0, onComplete: membersLoaded, onError: memberLoadFailed)
     }
     
@@ -49,10 +51,12 @@ class MemberListViewController : UITableViewController {
     }
     
     func membersLoaded() {
+        HUD.hide()
         self.tableView.reloadData()
     }
     
     func memberLoadFailed(message : String!) {
+        HUD.flash(.Error)
         print("Error: \(message)")
     }
     

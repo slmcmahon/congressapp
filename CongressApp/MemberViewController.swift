@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import PKHUD
 
 class MemberViewController : UIViewController {
     
@@ -25,10 +26,12 @@ class MemberViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        HUD.show(.Progress)
         vm = MemberViewModel(memberId: memberId, onComplete: memberLoaded, onError: memberLoadFailed)
     }
     
     private func memberLoaded() {
+        HUD.hide()
         self.title = vm?.name
         lblName.text = vm?.name
         lblPhone.text = vm?.phone
