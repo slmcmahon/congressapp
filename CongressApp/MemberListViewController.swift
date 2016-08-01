@@ -65,9 +65,9 @@ class MemberListViewController : UITableViewController {
     //   Conservative Party of New York State: Orange
     //   Default:  clear
     func getColor(record : JSON) -> UIColor {
-        return record["party"].stringValue == "Democrat"
-            ? UIColor.init(colorLiteralRed: 0.0, green: 0.0, blue: 255.0, alpha: 0.5)
-            : UIColor.init(colorLiteralRed: 255.0, green: 0.0, blue: 0.0, alpha: 0.5)
+        return record["party"].stringValue == "Republican"
+            ? UIColor.init(colorLiteralRed: 255.0, green: 0.0, blue: 0.0, alpha: 0.5)
+            : UIColor.init(colorLiteralRed: 0.0, green: 0.0, blue: 255.0, alpha: 0.5)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
