@@ -38,9 +38,36 @@ class MemberListViewController : UITableViewController {
             cell = UITableViewCell(style: .Default, reuseIdentifier: cellId)
         }
         
-        cell.textLabel?.text = vm?[indexPath.row]!["person"]["name"].stringValue
+        let record = getRecord(indexPath.row)
+        
+        cell.textLabel?.text = record["person"]["name"].stringValue
         
         return cell as UITableViewCell!
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        let record = getRecord(indexPath.row)
+        let color = getColor(record)
+        
+        cell.contentView.backgroundColor = color
+        cell.textLabel?.backgroundColor = UIColor.clearColor()
+    }
+    
+    func getRecord(index : Int) -> JSON {
+        return (vm?[index])!
+    }
+    
+    // TODO: More colors, and obviously make it look nicer
+    //   Independent: Purple
+    //   Libertarian: Gold
+    //   Vermont Progressive: Red
+    //   Working Families: (white/blue/purple)
+    //   Conservative Party of New York State: Orange
+    //   Default:  clear
+    func getColor(record : JSON) -> UIColor {
+        return record["party"].stringValue == "Democrat"
+            ? UIColor.init(colorLiteralRed: 0.0, green: 0.0, blue: 255.0, alpha: 0.5)
+            : UIColor.init(colorLiteralRed: 255.0, green: 0.0, blue: 0.0, alpha: 0.5)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
