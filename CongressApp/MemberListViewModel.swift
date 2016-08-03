@@ -11,9 +11,9 @@ import SwiftyJSON
 import Alamofire
 
 public class MemberListViewModel {
-    public var members : [JSON] = []
+    public var members : [Member] = []
     
-    public subscript(row : Int) -> JSON? {
+    public subscript(row : Int) -> Member? {
         get {
             return members.count > 0 ? members[row] : nil
         }
@@ -34,7 +34,7 @@ public class MemberListViewModel {
             .responseJSON { response in
                 if let rs = response.result.value {
                     let json = JSON(rs)
-                    self.members = json["objects"].array!
+                    self.members = Member.load(json["objects"].array!)
                     onComplete()
                 } else {
                     onError(message: "Failed to load member data.")

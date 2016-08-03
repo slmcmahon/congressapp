@@ -52,6 +52,12 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dnh-yz-6MJ" id="BGV-X1-Z0e">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pSp-Tj-dSO">
+                                            <rect key="frame" x="0.0" y="1" width="10" height="42"/>
+                                            <color key="backgroundColor" red="0.97466284036636353" green="0.35823625326156616" blue="0.034179102629423141" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </view>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="pJq-Zh-t35" kind="show" identifier="showMember" id="d0q-L3-W9b"/>
