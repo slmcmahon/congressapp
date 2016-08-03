@@ -17,8 +17,6 @@ class StatesViewController: UITableViewController {
         
         self.title = "U.S. States & Territories"
         
-        self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 50, 0);
-        
         stateNames = Array(Constants.states.keys).sort()
     }
 

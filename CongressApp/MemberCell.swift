@@ -10,18 +10,20 @@ import UIKit
 
 public class MemberCell : UITableViewCell {
     
+    @IBOutlet var lblName: UILabel!
+    @IBOutlet var colorView: UIView!
+    
     public var member : Member!
     
     override public func layoutSubviews() {
+        lblName.text = member.fullName
         
+        var color : UIColor!
+        if let c = Constants.partyColors[member.party] {
+            color = c
+        } else {
+            color = UIColor.clearColor()
+        }
+        colorView.backgroundColor = color
     }
 }
-
-// Democrate: Blue
-// Republican: Red
-// Independent: Purple
-// Libertarian: Gold
-// Vermont Progressive: Red
-// Working Families: (white/blue/purple)
-// Conservative Party of New York State: Orange
-// Default:  clear

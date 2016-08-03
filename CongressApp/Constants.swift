@@ -6,10 +6,19 @@
 //  Copyright © 2016 Stephen McMahon. All rights reserved.
 //
 
+import UIKit
+
 public struct Constants {
     static let baseUrl = "https://www.govtrack.us/api/v2/"
     static let membersBaseUrl = Constants.baseUrl + "role?current=true"
     static let memberBaseUrl = Constants.baseUrl + "person/"
+    
+    static let partyColors : Dictionary<String, UIColor> = [
+        "Republican" : UIColor.redColor(),
+        "Democrat" : UIColor.blueColor(),
+        "Independent" : UIColor.purpleColor(),
+        "Libertarian" : UIColor.init(colorLiteralRed: 207.0, green: 181.0, blue: 59.0, alpha: 1.0)
+    ]
     
     static let states : Dictionary<String,String> = [
         "Alabama":"AL",

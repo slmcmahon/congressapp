@@ -46,7 +46,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemberCell" id="Dnh-yz-6MJ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemberCell" id="Dnh-yz-6MJ" customClass="MemberCell" customModule="CongressApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dnh-yz-6MJ" id="BGV-X1-Z0e">
@@ -57,9 +57,17 @@
                                             <rect key="frame" x="0.0" y="1" width="10" height="42"/>
                                             <color key="backgroundColor" red="0.97466284036636353" green="0.35823625326156616" blue="0.034179102629423141" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxA-Vb-xUe">
+                                            <rect key="frame" x="18" y="11" width="564" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="colorView" destination="pSp-Tj-dSO" id="xWl-US-Cer"/>
+                                    <outlet property="lblName" destination="bxA-Vb-xUe" id="L76-3Y-uSn"/>
                                     <segue destination="pJq-Zh-t35" kind="show" identifier="showMember" id="d0q-L3-W9b"/>
                                 </connections>
                             </tableViewCell>

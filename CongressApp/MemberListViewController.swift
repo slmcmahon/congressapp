@@ -11,7 +11,6 @@ import SwiftyJSON
 import PKHUD
 
 class MemberListViewController : UITableViewController {
-    @IBOutlet var colorIndicator: UIView!
     
     var vm : MemberListViewModel?
     var stateData : (String, String)?
@@ -20,8 +19,6 @@ class MemberListViewController : UITableViewController {
         super.viewDidLoad()
         
         self.title = stateData!.1
-        
-        self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 50, 0);
         
         HUD.show(.Progress)
         vm = MemberListViewModel(stateCode: stateData!.0, onComplete: membersLoaded, onError: memberLoadFailed)
@@ -33,44 +30,16 @@ class MemberListViewController : UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellId = "MemberCell"
-        var cell: UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellId) as UITableViewCell!
+        var cell: MemberCell! = tableView.dequeueReusableCellWithIdentifier(cellId) as! MemberCell!
         
         if (cell == nil) {
-            cell = UITableViewCell(style: .Default, reuseIdentifier: cellId)
+            cell = MemberCell(style: .Default, reuseIdentifier: cellId)
         }
         
-        let m = vm?[indexPath.row]
-        
-        cell.textLabel?.text = m!.fullName
+        cell.member = vm?[indexPath.row]
         
         return cell as UITableViewCell!
     }
-    
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        let color = UIColor.clearColor()
-        
-        cell.contentView.backgroundColor = color
-        cell.textLabel?.backgroundColor = color 
-    }
-    
-    func getRecord(index : Int) -> Member {
-        return (vm?[index])!
-    }
-    
-    // TODO: More colors, and obviously make it look nicer
-    //   Independent: Purple
-    //   Libertarian: Gold
-    //   Vermont Progressive: Red
-    //   Working Families: (white/blue/purple)
-    //   Conservative Party of New York State: Orange
-    //   Default:  clear
-    /*
-    func getColor(party : String!) -> UIColor {
-        return party == "Republican"
-            ? UIColor.init(colorLiteralRed: 255.0, green: 0.0, blue: 0.0, alpha: 0.5)
-            : UIColor.init(colorLiteralRed: 0.0, green: 0.0, blue: 255.0, alpha: 0.5)
-    }
-    */
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let indexPath = tableView.indexPathForSelectedRow!
@@ -88,5 +57,4 @@ class MemberListViewController : UITableViewController {
         HUD.flash(.Error)
         print("Error: \(message)")
     }
-    
 }
