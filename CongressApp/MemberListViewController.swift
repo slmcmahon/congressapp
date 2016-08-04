@@ -38,7 +38,7 @@ class MemberListViewController : UITableViewController {
         
         cell.member = vm?[indexPath.row]
         
-        return cell as UITableViewCell!
+        return cell
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

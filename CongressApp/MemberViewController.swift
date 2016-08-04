@@ -16,9 +16,6 @@ class MemberViewController : UIViewController {
     @IBOutlet var lblPhone: UILabel!
     @IBOutlet var lblTitle: UILabel!
     @IBOutlet var lblParty: UILabel!
-    @IBOutlet var lblTwitterId : UILabel!
-    @IBOutlet var lblYoutubeId : UILabel!
-    @IBOutlet var lblWebSite : UILabel!
     
     var vm : MemberViewModel?
     var memberId : Int?
@@ -37,13 +34,23 @@ class MemberViewController : UIViewController {
         lblPhone.text = vm?.phone
         lblTitle.text = vm?.title
         lblParty.text = vm?.party
-        lblTwitterId.text = vm?.twitterId
-        lblYoutubeId.text = vm?.youtubeId
-        lblWebSite.text = vm?.webSite
+        
     }
     
     private func memberLoadFailed(message : String!) {
         print("\(message)")
+    }
+    
+    private func isAppInstalled(prot: String!) -> Bool {
+        return UIApplication.sharedApplication().canOpenURL(NSURL(string: "\(prot)://")!)
+    }
+    
+    @IBAction func buttonClicked(sender: AnyObject) {
+        if (sender.tag == 0) {
+            if isAppInstalled("twitter") {
+                UIApplication.sharedApplication().openURL(NSURL(string: "twitter://\(vm?.twitterId)")!)
+            }
+        }
     }
 }
 
