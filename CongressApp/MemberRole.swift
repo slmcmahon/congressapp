@@ -9,11 +9,12 @@
 import Foundation
 import SwiftyJSON
 
-public class MemberRole {
+public class MemberRole : BaseModel {
     let current : Bool
     let congressNumbers : [Int]
     let description : String
-    let endDate : String
+    let startDate : NSDate
+    let endDate : NSDate
     let roleId : Int
     let leadershipTitle : String
     let party : String
@@ -24,7 +25,6 @@ public class MemberRole {
     let senatorClassDisplay : String
     let senatorRank : String
     let senatorRankDisplay : String
-    let startDate : String
     let state : String
     let title : String
     let titleDisplay : String
@@ -41,7 +41,7 @@ public class MemberRole {
         current = data["current"].boolValue
         congressNumbers = data["congress_numbers"].arrayValue.map { $0.intValue }
         description = data["description"].stringValue
-        endDate = data["enddate"].stringValue
+        endDate = MemberRole.getDate(data["enddate"].stringValue)
         leadershipTitle = data["leadership_title"].stringValue
         party = data["party"].stringValue
         phone = data["phone"].stringValue
@@ -51,7 +51,7 @@ public class MemberRole {
         senatorClassDisplay = data["senator_class_label"].stringValue
         senatorRank = data["senator_rank"].stringValue
         senatorRankDisplay = data["senator_rank_label"].stringValue
-        startDate = data["start_date"].stringValue
+        startDate = MemberRole.getDate(data["startdate"].stringValue)
         state = data["state"].stringValue
         title = data["title"].stringValue
         titleDisplay = data["title_long"].stringValue
@@ -63,4 +63,5 @@ public class MemberRole {
         office = data["extra"]["office"].stringValue
         rssUrl = data["extra"]["rss_url"].stringValue
     }
+    
 }

@@ -29,12 +29,15 @@ class MemberViewController : UIViewController {
     
     private func memberLoaded() {
         HUD.hide()
-        self.title = vm?.name
-        lblName.text = vm?.name
-        lblPhone.text = vm?.phone
-        lblTitle.text = vm?.title
-        lblParty.text = vm?.party
+        self.title = vm?.member?.getFullName()
+        lblName.text = vm?.member?.label
+        lblPhone.text = vm?.member?.roles.last?.phone
+        lblTitle.text = vm?.member?.roles.last?.title
+        lblParty.text = vm?.member?.roles.last?.party
         
+        
+        let yio = vm?.member?.yearsInOffice()
+        print (String(format: "%.1f years in office", yio!))
     }
     
     private func memberLoadFailed(message : String!) {
@@ -48,7 +51,7 @@ class MemberViewController : UIViewController {
     @IBAction func buttonClicked(sender: AnyObject) {
         if (sender.tag == 0) {
             if isAppInstalled("twitter") {
-                UIApplication.sharedApplication().openURL(NSURL(string: "twitter://\(vm?.twitterId)")!)
+                UIApplication.sharedApplication().openURL(NSURL(string: "twitter://user?screen_name=\(vm?.member!.twitterId)")!)
             }
         }
     }
