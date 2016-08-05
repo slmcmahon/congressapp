@@ -10,51 +10,116 @@ import Foundation
 import SwiftyJSON
 
 public class MemberDetail : BaseModel {
-    let bioGuidId : String!
-    let birthday : NSDate
-    let cspanId : Int!
-    let firstName : String!
-    let gender : String!
-    let memberId : Int!
-    let lastName : String!
-    let url : String!
-    let middleName : String!
-    let label : String!
-    let nickName : String!
-    let osId : String!
-    let pvsId : String!
-    let twitterId : String!
-    let youTubeId : String!
-    let roles : [MemberRole]
+    let jsonData : JSON
     
     init(data : JSON) {
-        bioGuidId = data["bioguidid"].stringValue
-        birthday = MemberDetail.getDate(data["birthday"].stringValue)
-        cspanId = data["cspanid"].intValue
-        firstName = data["firstname"].stringValue
-        gender = data["gender"].stringValue
-        memberId = data["id"].intValue
-        lastName = data["lastname"].stringValue
-        url = data["link"].stringValue
-        middleName = data["middlename"].stringValue
-        label = data["name"].stringValue
-        nickName = data["nickname"].stringValue
-        osId = data["osid"].stringValue
-        pvsId = data["pvsid"].stringValue
-        twitterId = data["twitterid"].string == nil ? "" : data["twitterId"].stringValue
-        youTubeId = data["youtubeid"].string == nil ? "" : data["youtubeid"].stringValue
-        roles = data["roles"].arrayValue.map { MemberRole(data: $0) }
+        jsonData = data
     }
     
-    public func getFullName() -> String! {
-        return "\(self.lastName), \(self.firstName)"
+    public var lastName : String {
+        get { return jsonData["lastname"].stringValue }
     }
     
-    public func yearsInOffice() -> Float {
-        return roles.map({ getYearsInRole($0) }).reduce(0, combine: {$0 + $1})
+    public var firstName : String {
+        get { return jsonData["firstname"].stringValue }
     }
     
-    private func getYearsInRole(role : MemberRole) -> Float {
+    public var roles : [MemberRole] {
+        get {
+            return jsonData["roles"].arrayValue.map { MemberRole(data: $0) }
+        }
+    }
+    
+    public var bioGuideId : String {
+        get { return jsonData["bioguidid"].stringValue }
+    }
+    
+    public var birthday : NSDate? {
+        get {
+            if let dstr = jsonData["birthday"].string {
+                return BaseModel.getDate(dstr)
+            }
+            return nil
+        }
+    }
+    
+    public var cspanId : Int {
+        get { return jsonData["cspanid"].intValue }
+    }
+    
+    public var gender : String {
+        get { return jsonData["gender"].stringValue }
+    }
+    
+    public var memberId : Int {
+        get { return jsonData["id"].intValue }
+    }
+    
+    public var url : String {
+        get { return jsonData["link"].stringValue }
+    }
+    
+    public var middleName : String? {
+        get {
+            if let mn = jsonData["middlename"].string {
+                return mn
+            }
+            return nil;
+        }
+    }
+    
+    public var name : String? {
+        get { return jsonData["name"].stringValue }
+    }
+    
+    public var nickName : String? {
+        get {
+            if let nn = jsonData["nickname"].string {
+                return nn
+            }
+            return nil
+        }
+    }
+    
+    public var osId : String {
+        get { return jsonData["osid"].stringValue }
+    }
+    
+    public var pvsId : String {
+        get { return jsonData["pvsid"].stringValue }
+    }
+    
+    public var twitterId : String? {
+        get {
+            if let tmp = jsonData["twitterid"].string {
+                return tmp
+            }
+            return nil
+        }
+    }
+    
+    public var youtubeId : String? {
+        get {
+            if let tmp = jsonData["youtubeid"].string {
+                return tmp
+            }
+            return nil
+        }
+    }
+    
+    public var fullName : String! {
+        get {
+            return "\(self.lastName), \(self.firstName)"
+        }
+    }
+    
+    public var yearsInOffice : Float {
+        get {
+            return roles.map({ getYearsInRole($0) }).reduce(0, combine: {$0 + $1})
+        }
+    }
+    
+    public func getYearsInRole(role : MemberRole) -> Float {
         let months = NSCalendar.currentCalendar().components(.Month, fromDate: role.startDate, toDate: role.endDate, options: []).month
         return Float(months) / 12
     }
