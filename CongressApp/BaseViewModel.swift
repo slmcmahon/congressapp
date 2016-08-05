@@ -19,6 +19,7 @@ public class BaseViewModel {
     }
     
     public func getData(urlString : String!, onComplete:() -> Void, onError:(message : String!) -> Void) {
+        print(urlString)
         Alamofire.request(.GET, urlString, parameters: nil)
             .responseJSON { response in
                 if let rs = response.result.value {

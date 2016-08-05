@@ -43,14 +43,13 @@ class BillListViewController : UITableViewController {
         return cell
     }
     
-    /*
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let indexPath = tableView.indexPathForSelectedRow!
-        let code = vm?[indexPath.row]!.1
-        let mvc = segue.destinationViewController as! BillListView
-        mvc.memberId = code
+        let billId = vm?[indexPath.row]!.1
+        let mvc = segue.destinationViewController as! BillViewController
+        mvc.billId = billId
     }
-    */
+ 
     
     func billsLoaded() {
         HUD.hide()

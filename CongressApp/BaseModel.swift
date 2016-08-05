@@ -25,6 +25,10 @@ public class BaseModel {
         return jsonData[name].intValue
     }
     
+    func getBool(name: String) -> Bool {
+        return jsonData[name].boolValue
+    }
+    
     func getOptionalString(name : String) -> String? {
         if let tmp = jsonData[name].string {
             return tmp

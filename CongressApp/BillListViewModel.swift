@@ -31,7 +31,7 @@ public class BillListViewModel : BaseViewModel {
     
     public init(memberId : Int, onComplete:() -> Void, onError:(message : String!) -> Void) {
         super.init()
-        let url = "\(Constants.baseUrl)bill?sponsor=\(memberId)&fields=display_number,id"
+        let url = "\(Constants.baseUrl)bill?sponsor=\(memberId)&fields=title,id"
         getData(url, onComplete: {
             self.loadData()
             onComplete()
@@ -40,7 +40,7 @@ public class BillListViewModel : BaseViewModel {
     
     private func loadData() {
         if let objects = super.jsonData["objects"].array {
-            billListItems = objects.map { ($0["display_number"].stringValue, $0["id"].intValue) }
+            billListItems = objects.map { ($0["title"].stringValue, $0["id"].intValue) }
         }
     }
 }
