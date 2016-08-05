@@ -7,23 +7,21 @@
 //
 
 import Foundation
-import SwiftyJSON
-import Alamofire
 
-public class MemberViewModel {
+public class MemberViewModel : BaseViewModel {
     
-    var member : MemberDetail?
+    public var member : MemberDetail?
     
     public init(memberId : Int!, onComplete:() -> Void, onError:(message : String!) -> Void) {
-        Alamofire.request(.GET, "\(Constants.memberBaseUrl)/\(memberId)", parameters: nil)
-            .responseJSON { response in
-                if let rs = response.result.value {
-                    let json = JSON(rs)
-                    self.member = MemberDetail(data: json)
-                    onComplete()
-                } else {
-                    onError(message: "Failed to load member data.")
-                }
-        }
+        super.init()
+        let url = "\(Constants.memberBaseUrl)/\(memberId)"
+        getData(url, onComplete: {
+            self.loadData()
+            onComplete()
+        }, onError: onError)
+    }
+    
+    private func loadData() {
+        self.member = MemberDetail(data:super.jsonData)
     }
 }

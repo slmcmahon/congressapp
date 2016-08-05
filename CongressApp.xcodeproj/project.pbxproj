@@ -26,6 +26,7 @@
 		3EE2F5931D4CAA7300357F35 /* CongressAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2F5921D4CAA7300357F35 /* CongressAppTests.swift */; };
 		3EE2F59E1D4CAA7300357F35 /* CongressAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2F59D1D4CAA7300357F35 /* CongressAppUITests.swift */; };
 		3EE7C9F31D53BCD80078FE48 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE7C9F21D53BCD80078FE48 /* BaseModel.swift */; };
+		3EFC9B591D5460010079F7BF /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC9B581D5460010079F7BF /* BaseViewModel.swift */; };
 		96FF8C79EB911B84DE6E0897 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11F52E043FE3B13A0348838 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		3EE2F59D1D4CAA7300357F35 /* CongressAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongressAppUITests.swift; sourceTree = "<group>"; };
 		3EE2F59F1D4CAA7300357F35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EE7C9F21D53BCD80078FE48 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		3EFC9B581D5460010079F7BF /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		533689CDA682AC78277C360C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E11F52E043FE3B13A0348838 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -183,6 +185,7 @@
 			children = (
 				3E1DD86E1D4CD44E005662B4 /* MemberViewModel.swift */,
 				3E1DD86A1D4CBB78005662B4 /* MemberListViewModel.swift */,
+				3EFC9B581D5460010079F7BF /* BaseViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				3E74E3241D5199DA00E2BC25 /* MemberCell.swift in Sources */,
 				3E1DD8641D4CB0DE005662B4 /* MembersViewController.swift in Sources */,
 				3EE2F57E1D4CAA7300357F35 /* StatesViewController.swift in Sources */,
+				3EFC9B591D5460010079F7BF /* BaseViewModel.swift in Sources */,
 				3E1DD86F1D4CD44E005662B4 /* MemberViewModel.swift in Sources */,
 				3E1DD8621D4CABD5005662B4 /* Constants.swift in Sources */,
 				3E74E3271D519A9000E2BC25 /* Member.swift in Sources */,
