@@ -9,22 +9,22 @@
 import Foundation
 import SwiftyJSON
 
-public class Member {
-    
-    let firstName : String!
-    let gender : String!
-    let party : String!
-    let memberId : Int!
-    let fullName : String!
+public class Member : BaseModel {
     
     init(data : JSON) {
-        let p = data["person"]
-        
-        party = data["party"].stringValue
-        firstName = p["firstname"].stringValue
-        gender = p["gender"].stringValue
-        memberId = p["id"].intValue
-        fullName = p["name"].stringValue
+        super.init(json: data)
+    }
+    
+    public var party : String {
+        get { return jsonData["party"].stringValue }
+    }
+    
+    public var fullName : String {
+        get { return jsonData["person"]["name"].stringValue }
+    }
+    
+    public var memberId : Int {
+        get { return jsonData["person"]["id"].intValue }
     }
     
     public static func load(memberData : [JSON]!) -> [Member]! {

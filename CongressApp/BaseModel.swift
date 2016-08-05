@@ -7,10 +7,31 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 public class BaseModel {
     
-    static func getDate(dstr : String!) -> NSDate {
+    var jsonData : JSON
+    
+    init(json : JSON) {
+        jsonData = json
+    }
+    
+    func getOptionalString(name : String) -> String? {
+        if let tmp = jsonData[name].string {
+            return tmp
+        }
+        return nil
+    }
+    
+    func getOptionalDate(name : String) -> NSDate? {
+        if let tmp = jsonData[name].string {
+            return getDate(tmp)
+        }
+        return nil
+    }
+    
+    private func getDate(dstr : String!) -> NSDate {
         let fmt = NSDateFormatter()
         fmt.dateFormat = "yyyy-MM-dd"
         return fmt.dateFromString(dstr)!

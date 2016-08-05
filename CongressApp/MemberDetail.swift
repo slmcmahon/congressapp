@@ -10,10 +10,9 @@ import Foundation
 import SwiftyJSON
 
 public class MemberDetail : BaseModel {
-    let jsonData : JSON
     
     init(data : JSON) {
-        jsonData = data
+        super.init(json: data)
     }
     
     public var lastName : String {
@@ -35,12 +34,7 @@ public class MemberDetail : BaseModel {
     }
     
     public var birthday : NSDate? {
-        get {
-            if let dstr = jsonData["birthday"].string {
-                return BaseModel.getDate(dstr)
-            }
-            return nil
-        }
+        get { return getOptionalDate("birthday") }
     }
     
     public var cspanId : Int {
@@ -60,12 +54,7 @@ public class MemberDetail : BaseModel {
     }
     
     public var middleName : String? {
-        get {
-            if let mn = jsonData["middlename"].string {
-                return mn
-            }
-            return nil;
-        }
+        get { return getOptionalString("middlename") }
     }
     
     public var name : String? {
@@ -73,12 +62,7 @@ public class MemberDetail : BaseModel {
     }
     
     public var nickName : String? {
-        get {
-            if let nn = jsonData["nickname"].string {
-                return nn
-            }
-            return nil
-        }
+        get { return getOptionalString("nickname") }
     }
     
     public var osId : String {
@@ -90,21 +74,11 @@ public class MemberDetail : BaseModel {
     }
     
     public var twitterId : String? {
-        get {
-            if let tmp = jsonData["twitterid"].string {
-                return tmp
-            }
-            return nil
-        }
+        get { return getOptionalString("twitterid") }
     }
     
     public var youtubeId : String? {
-        get {
-            if let tmp = jsonData["youtubeid"].string {
-                return tmp
-            }
-            return nil
-        }
+        get { return getOptionalString("youtubeid") }
     }
     
     public var fullName : String! {

@@ -10,10 +10,9 @@ import Foundation
 import SwiftyJSON
 
 public class MemberRole : BaseModel {
-    let jsonData : JSON!
     
     init(data : JSON) {
-        jsonData = data
+        super.init(json: data)
     }
     
     public var roleId : Int {
@@ -21,11 +20,11 @@ public class MemberRole : BaseModel {
     }
     
     public var startDate : NSDate {
-        get { return BaseModel.getDate(jsonData["startdate"].stringValue) }
+        get { return getOptionalDate("startdate")! }
     }
     
     public var endDate : NSDate {
-        get { return BaseModel.getDate(jsonData["enddate"].stringValue) }
+        get { return getOptionalDate("enddate")! }
     }
     
     public var state : String {
