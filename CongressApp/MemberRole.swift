@@ -28,7 +28,7 @@ public class MemberRole : BaseModel {
     }
     
     public var state : String {
-        get { return jsonData["state"].stringValue }
+        get { return getStringValue("state") }
     }
     
     public var address : String? {
@@ -38,15 +38,15 @@ public class MemberRole : BaseModel {
     }
     
     public var phone : String {
-        get { return jsonData["phone"].stringValue }
+        get { return getStringValue("phone") }
     }
     
     public var roleDisplay : String {
-        get { return jsonData["role_type_label"].stringValue }
+        get { return getStringValue("role_type_label") }
     }
     
     public var party : String {
-        get { return jsonData["party"].stringValue }
+        get { return getStringValue("party") }
     }
     
     public func hasExtra() -> Bool {
@@ -54,7 +54,7 @@ public class MemberRole : BaseModel {
     }
     
     public var leadershipTitle : String {
-        get { return jsonData["leadership_title"].stringValue }
+        get { return getStringValue("leadership_title") }
     }
     
     public var current : Bool {
@@ -66,39 +66,39 @@ public class MemberRole : BaseModel {
     }
     
     public var description : String {
-        get { return jsonData["description"].stringValue }
+        get { return getStringValue("description") }
     }
     
     public var roleType : String {
-        get { return jsonData["role_type"].stringValue }
+        get { return getStringValue("role_type") }
     }
     
     public var senatorClass : String {
-        get { return jsonData["senator_class"].stringValue }
+        get { return getStringValue("senator_class") }
     }
     
     public var senatorClassDisplay : String {
-        get { return jsonData["senator_class_label"].stringValue }
+        get { return getStringValue("senator_class_label") }
     }
     
     public var senatorRank : String {
-        get { return jsonData["senator_rank"].stringValue }
+        get { return getStringValue("senator_rank") }
     }
     
     public var senatorRankDisplay : String {
-        get { return jsonData["senator_rank_label"].stringValue }
+        get { return getStringValue("senator_rank_label") }
     }
     
     public var title : String {
-        get { return jsonData["title"].stringValue }
+        get { return getStringValue("title") }
     }
     
     public var titleDisplay : String {
-        get { return jsonData["title_long"].stringValue }
+        get { return getStringValue("title_long") }
     }
     
     public var webSite : String {
-        get { return jsonData["website"].stringValue }
+        get { return getStringValue("website") }
     }
     
     public var contactForm : String? {

@@ -57,6 +57,15 @@ class MemberViewController : UIViewController {
         return UIApplication.sharedApplication().canOpenURL(NSURL(string: "\(prot)://")!)
     }
     
+    @IBAction func billsClicked(sender : AnyObject) {
+        performSegueWithIdentifier("showBills", sender: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let mvc = segue.destinationViewController as! BillListViewController
+        mvc.memberId = vm?.member?.memberId
+    }
+    
     @IBAction func buttonClicked(sender: AnyObject) {
         if (sender.tag == 0) {
             if isAppInstalled("twitter") {

@@ -17,6 +17,14 @@ public class BaseModel {
         jsonData = json
     }
     
+    func getStringValue(name: String) -> String {
+        return jsonData[name].stringValue
+    }
+    
+    func getIntValue(name: String) -> Int {
+        return jsonData[name].intValue
+    }
+    
     func getOptionalString(name : String) -> String? {
         if let tmp = jsonData[name].string {
             return tmp
