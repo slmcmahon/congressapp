@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3E1DD8621D4CABD5005662B4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1DD8611D4CABD5005662B4 /* Constants.swift */; };
-		3E1DD8641D4CB0DE005662B4 /* MembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1DD8631D4CB0DE005662B4 /* MembersViewController.swift */; };
 		3E1DD8691D4CBAC9005662B4 /* MemberListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1DD8681D4CBAC9005662B4 /* MemberListViewController.swift */; };
 		3E1DD86B1D4CBB78005662B4 /* MemberListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1DD86A1D4CBB78005662B4 /* MemberListViewModel.swift */; };
 		3E1DD86D1D4CCDB9005662B4 /* MemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1DD86C1D4CCDB9005662B4 /* MemberViewController.swift */; };
@@ -17,6 +16,7 @@
 		3E6981551D52E9C60071E645 /* MemberRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6981541D52E9C60071E645 /* MemberRole.swift */; };
 		3E74E3241D5199DA00E2BC25 /* MemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E74E3231D5199DA00E2BC25 /* MemberCell.swift */; };
 		3E74E3271D519A9000E2BC25 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E74E3261D519A9000E2BC25 /* Member.swift */; };
+		3EB1BA961D5AC8D3003402C8 /* BillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB1BA951D5AC8D3003402C8 /* BillCell.swift */; };
 		3EE2F57C1D4CAA7300357F35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2F57B1D4CAA7300357F35 /* AppDelegate.swift */; };
 		3EE2F57E1D4CAA7300357F35 /* StatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2F57D1D4CAA7300357F35 /* StatesViewController.swift */; };
 		3EE2F5801D4CAA7300357F35 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2F57F1D4CAA7300357F35 /* SettingsViewController.swift */; };
@@ -55,7 +55,6 @@
 /* Begin PBXFileReference section */
 		1611E679961B450617D341F8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		3E1DD8611D4CABD5005662B4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		3E1DD8631D4CB0DE005662B4 /* MembersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembersViewController.swift; sourceTree = "<group>"; };
 		3E1DD8681D4CBAC9005662B4 /* MemberListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberListViewController.swift; sourceTree = "<group>"; };
 		3E1DD86A1D4CBB78005662B4 /* MemberListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberListViewModel.swift; sourceTree = "<group>"; };
 		3E1DD86C1D4CCDB9005662B4 /* MemberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +63,7 @@
 		3E6981541D52E9C60071E645 /* MemberRole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberRole.swift; sourceTree = "<group>"; };
 		3E74E3231D5199DA00E2BC25 /* MemberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberCell.swift; sourceTree = "<group>"; };
 		3E74E3261D519A9000E2BC25 /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		3EB1BA951D5AC8D3003402C8 /* BillCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillCell.swift; sourceTree = "<group>"; };
 		3EE2F5781D4CAA7300357F35 /* CongressApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CongressApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EE2F57B1D4CAA7300357F35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EE2F57D1D4CAA7300357F35 /* StatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesViewController.swift; sourceTree = "<group>"; };
@@ -168,7 +168,6 @@
 				3EE2F57B1D4CAA7300357F35 /* AppDelegate.swift */,
 				3EE2F5891D4CAA7300357F35 /* Info.plist */,
 				3E1DD8611D4CABD5005662B4 /* Constants.swift */,
-				3E74E3231D5199DA00E2BC25 /* MemberCell.swift */,
 			);
 			path = CongressApp;
 			sourceTree = "<group>";
@@ -216,13 +215,14 @@
 		3EFF84881D4D97EB0023F21B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3E74E3231D5199DA00E2BC25 /* MemberCell.swift */,
 				3EFC9B5C1D546D220079F7BF /* BillListViewController.swift */,
 				3EE2F57D1D4CAA7300357F35 /* StatesViewController.swift */,
 				3EE2F57F1D4CAA7300357F35 /* SettingsViewController.swift */,
-				3E1DD8631D4CB0DE005662B4 /* MembersViewController.swift */,
 				3E1DD8681D4CBAC9005662B4 /* MemberListViewController.swift */,
 				3E1DD86C1D4CCDB9005662B4 /* MemberViewController.swift */,
 				3EFC9B621D5481510079F7BF /* BillViewController.swift */,
+				3EB1BA951D5AC8D3003402C8 /* BillCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -429,8 +429,8 @@
 				3EE2F57C1D4CAA7300357F35 /* AppDelegate.swift in Sources */,
 				3E1DD8691D4CBAC9005662B4 /* MemberListViewController.swift in Sources */,
 				3E1DD86D1D4CCDB9005662B4 /* MemberViewController.swift in Sources */,
+				3EB1BA961D5AC8D3003402C8 /* BillCell.swift in Sources */,
 				3E74E3241D5199DA00E2BC25 /* MemberCell.swift in Sources */,
-				3E1DD8641D4CB0DE005662B4 /* MembersViewController.swift in Sources */,
 				3EE2F57E1D4CAA7300357F35 /* StatesViewController.swift in Sources */,
 				3EFC9B591D5460010079F7BF /* BaseViewModel.swift in Sources */,
 				3E1DD86F1D4CD44E005662B4 /* MemberViewModel.swift in Sources */,

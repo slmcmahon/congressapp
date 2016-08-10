@@ -24,32 +24,28 @@ class BillListViewController : UITableViewController {
         vm = BillListViewModel(memberId: memberId, onComplete: billsLoaded, onError: billsLoadFailed)
     }
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 74.0
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return vm!.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellId = "BillListCell"
-        var cell: UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellId) as UITableViewCell!
+        var cell: BillCell! = tableView.dequeueReusableCellWithIdentifier(cellId) as! BillCell!
         
         if (cell == nil) {
-            cell = UITableViewCell(style: .Default, reuseIdentifier: cellId)
+            cell = BillCell(style: .Default, reuseIdentifier: cellId)
         }
         
-        let item = vm?[indexPath.row]
         
-        cell.textLabel?.text = item!.0
+        cell.bill = vm?[indexPath.row]
+        
         
         return cell
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let indexPath = tableView.indexPathForSelectedRow!
-        let billId = vm?[indexPath.row]!.1
-        let mvc = segue.destinationViewController as! BillViewController
-        mvc.billId = billId
-    }
- 
     
     func billsLoaded() {
         HUD.hide()

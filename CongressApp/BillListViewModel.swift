@@ -11,9 +11,9 @@ import SwiftyJSON
 
 public class BillListViewModel : BaseViewModel {
     
-    public var billListItems : [(String, Int)] = []
+    public var billListItems : [BillDetail] = []
     
-    public subscript(row : Int) -> (String, Int)? {
+    public subscript(row : Int) -> BillDetail? {
         get {
             return billListItems.count > 0 ? billListItems[row] : nil
         }
@@ -31,7 +31,7 @@ public class BillListViewModel : BaseViewModel {
     
     public init(memberId : Int, onComplete:() -> Void, onError:(message : String!) -> Void) {
         super.init()
-        let url = "\(Constants.baseUrl)bill?sponsor=\(memberId)&fields=title,id"
+        let url = "\(Constants.baseUrl)bill?sponsor=\(memberId)&fields=id,title,is_alive,is_current"
         getData(url, onComplete: {
             self.loadData()
             onComplete()
@@ -40,7 +40,7 @@ public class BillListViewModel : BaseViewModel {
     
     private func loadData() {
         if let objects = super.jsonData["objects"].array {
-            billListItems = objects.map { ($0["title"].stringValue, $0["id"].intValue) }
+            billListItems = objects.map { BillDetail(data: $0) }
         }
     }
 }
